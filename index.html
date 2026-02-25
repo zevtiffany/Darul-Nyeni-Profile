@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondok Pesantren Darul Nyeni</title>
+    <meta name="description"
+        content="Web profile of Pondok Pesantren Darul Nyeni, Malang. Mabar Jalan, Ngaji Kewajiban.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- External CSS (Modularized) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <h1 class="logo">Darul<span>Nyeni</span></h1>
+            <ul class="nav-links">
+                <li><a href="#hero">Beranda</a></li>
+                <li><a href="#about">Sejarah</a></li>
+                <li><a href="#roster">Kafilah (Roster)</a></li>
+                <li><a href="#contact">Lokasi</a></li>
+            </ul>
+            <button class="menu-btn" aria-label="Menu" id="mobile-menu-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#hero" class="mobile-link">Beranda</a>
+            <a href="#about" class="mobile-link">Sejarah</a>
+            <a href="#roster" class="mobile-link">Kafilah (Roster)</a>
+            <a href="#contact" class="mobile-link">Lokasi</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">Ahlan Wa Sahlan</div>
+            <h1 class="hero-title">Pondok Pesantren<br><span class="highlight">Darul Nyeni</span></h1>
+            <p class="hero-subtitle">Mabar Jalan, Ngaji Kewajiban, IPK Nyusul Kemudian.</p>
+            <div class="hero-actions">
+                <a href="#roster" class="btn btn-primary">Lihat Roster Santri</a>
+                <a href="#about" class="btn btn-secondary">Kisah Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Asal Muasal <span>Darul Nyeni</span></h2>
+                    <p class="lead">Berawal dari keresahan 6 pemuda (yang lebih sering nge-rank dari pada ngaji) akan
+                        kerasnya dunia per-Land-of-Dawn-an dan fana-nya IPK kampus.</p>
+                    <p>Mereka sadar bahwa jasmani yang sehat dan mekanik yang jago tidaklah cukup tanpa rohani yang
+                        kuat. Seringkali lose streak membuat hati gelap dan lisan tak terjaga. Maka dari itu, berdirilah
+                        <strong>Pondok Pesantren Darul Nyeni</strong>.
+                    </p>
+                    <div class="quote-box">
+                        "Tempat di mana doa dipanjatkan, skripsi dikerjakan dengan linangan air mata, dan win streak
+                        diusahakan dengan penuh tawakkal."
+                    </div>
+                    <p>Kami hadir untuk menyeimbangkan duniawi (tugas kampus & push rank) dan ukhrawi (ngaji & ibadah)
+                        di satu tempat yang penuh pesona: <em>Kota Malang</em>.</p>
+
+                    <div class="dalil-box glow-effect mt-4">
+                        <div class="arabic-text">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+                        <p class="translation">"Menuntut ilmu itu wajib atas setiap muslim."<br><strong>(HR. Ibnu
+                                Majah)</strong></p>
+                    </div>
+                </div>
+                <div class="about-image-wrapper">
+                    <div class="about-card glow-effect">
+                        <div class="about-card-inner">
+                            <h3>Visi</h3>
+                            <p>Mencetak generasi santri yang berakhlak mulia, ber-KDA tinggi, dan lulus tepat... pada
+                                waktunya.</p>
+                        </div>
+                    </div>
+                    <div class="about-card glow-effect mt-4">
+                        <div class="about-card-inner">
+                            <h3>Misi</h3>
+                            <ul>
+                                <li>Sholat jamaah 5 waktu tiada henti.</li>
+                                <li>Mengamankan Lord saat turtle pertama.</li>
+                                <li>Revisi bab 4 sampai ACC dosen.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="amalan-card glow-effect mt-4">
+                        <h3>Amalan & Wirid Harian</h3>
+                        <div class="amalan-list">
+                            <a href="https://quran.com/36" target="_blank" rel="noopener noreferrer"
+                                class="amalan-item">
+                                <span class="surah-name">📖 Surat Yasin</span>
+                                <span class="surah-time">Ba'da Subuh / Maghrib</span>
+                            </a>
+                            <a href="https://quran.com/55" target="_blank" rel="noopener noreferrer"
+                                class="amalan-item">
+                                <span class="surah-name">📖 Surat Ar-Rahman</span>
+                                <span class="surah-time">Ba'da Dhuha</span>
+                            </a>
+                            <a href="https://quran.com/56" target="_blank" rel="noopener noreferrer"
+                                class="amalan-item">
+                                <span class="surah-name">📖 Surat Al-Waqi'ah</span>
+                                <span class="surah-time">Ba'da Ashar</span>
+                            </a>
+                            <a href="https://quran.com/67" target="_blank" rel="noopener noreferrer"
+                                class="amalan-item">
+                                <span class="surah-name">📖 Surat Al-Mulk</span>
+                                <span class="surah-time">Sebelum Tidur</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roster Section -->
+    <section id="roster" class="roster">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title text-center">Kafilah <span>(Roster)</span> Utama</h2>
+                <p class="section-desc text-center">Para santri elit yang siap membela Ponpes di medan akademik maupun
+                    Land of Dawn.</p>
+            </div>
+
+            <div class="roster-grid">
+                <!-- Santri 1 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <!-- Front Face -->
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Roam</div>
+                                <div class="santri-name">Azmi Widhi Zevtiffany</div>
+                                <div class="santri-edu">S1 Ekonomi Pembangunan, Universitas Brawijaya</div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Macro</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Micro</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 75%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Back Face (Photo Placeholder) -->
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santri 2 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Mid Lane</div>
+                                <div class="santri-name">Rizal Abrar Fahmi</div>
+                                <div class="santri-edu">D4 Teknik Informatika, Politeknik Negeri Malang</div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Agility</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Coding</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santri 3 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Exp Lane</div>
+                                <div class="santri-name">Agil Putra Madani</div>
+                                <div class="santri-edu">D4 Administrasi Niaga, Politeknik Negeri Malang</div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Durability</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Business</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santri 4 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Gold Lane</div>
+                                <div class="santri-name">Farda Izzatul Ainur Irvanaya</div>
+                                <div class="santri-edu">D4 Teknik Elektro, Politeknik Negeri Malang</div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Farming</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Positioning</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 88%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santri 5 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Jungler</div>
+                                <div class="santri-name">Zidan Ramadhan Yulian Pradan</div>
+                                <div class="santri-edu">S1 Manajemen, Universitas Islam Negeri Maulana Malik Ibrahim
+                                    Malang
+                                </div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Retribution</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 98%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Rotation</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 92%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Santri 6 -->
+                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="role-badge">Roam / Sup</div>
+                                <div class="santri-name">Dzakki Abyan Priyasetyaka</div>
+                                <div class="santri-edu">S1 Perpajakan, Universitas Brawijaya</div>
+                                <div class="stats">
+                                    <div class="stat"><span class="label">Vision</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="stat"><span class="label">Tax Logic</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 90%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="photo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Foto Profil Belum Tersedia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-box glow-effect">
+                <div class="contact-content">
+                    <h2 class="section-title">Markas <span>Besar</span></h2>
+                    <p class="address">
+                        <strong>Jl. Griya Tunggul Asri, No. 12</strong><br>
+                        Tunggulwulung, Kecamatan Lowokwaru<br>
+                        Kota Malang, Jawa Timur
+                    </p>
+                    <p class="contact-note">Sedia kopi, WiFi, dan colokan. Dilarang toxic saat mabar di kawasan majelis.
+                    </p>
+                </div>
+                <div class="map-placeholder">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.527318357039!2d112.6079979!3d-7.944320499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7882772591ddbf%3A0xc023fedaf58c14d9!2sJl.%20Griya%20Tunggul%20Asri%20No.12%2C%20Tunggulwulung%2C%20Kec.%20Lowokwaru%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065143!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
+                        width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h2>Darul<span>Nyeni</span></h2>
+                <p>Est. 2026</p>
+            </div>
+            <div class="footer-links">
+                <p>&copy; 2026 Pondok Pesantren Darul Nyeni. All Rights Reserved.</p>
+                <p>Dibuat dengan keringat santri dan ampas kopi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JS (Modularized) -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/* CSS Variables for Core Theme */
+:root {
+  --bg-dark: #F5F7F5;
+  /* Light greyish white */
+  --bg-surface: #FFFFFF;
+  --bg-card: rgba(255, 255, 255, 0.9);
+
+  --primary: #128256;
+  /* Islamic green */
+  --primary-glow: rgba(18, 130, 86, 0.4);
+  --secondary: #EAB308;
+  /* Warm gold */
+  --secondary-glow: rgba(234, 179, 8, 0.4);
+
+  --text-main: #1F2937;
+  /* Dark slate for contrast */
+  --text-muted: #4B5563;
+  /* Medium grey */
+
+  --glass-border: rgba(18, 130, 86, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
