@@ -79,48 +79,124 @@
   }
 
   .ticker-item {
-    font-size: 0.78rem;
-    padding: 0 2rem;
+    font-size: 0.75rem;
+    padding: 0 1.5rem;
   }
 
   /* Hero */
   .hero {
     padding-top: 130px;
+    width: 100%;
+    max-width: 100vw;
+    /* Crucial: bound to viewport */
+    overflow-x: hidden;
+    /* Local safety */
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    overflow-x: hidden;
+    /* Prevent child leaks */
+  }
+
+  .hero-badge {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
+    /* Restored closer to "besar" while controlling width */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    word-break: normal;
+    overflow-wrap: break-word;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-tagline {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 2.5rem;
   }
 
   .hero-stats {
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1.2rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem 1rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    /* Force padding inclusion */
   }
 
-  .hero-stat-divider {
+  .hero-stats::-webkit-scrollbar {
     display: none;
   }
 
+  .hero-stat-divider {
+    display: block;
+    height: 20px;
+    width: 1px;
+    flex-shrink: 0;
+    background: var(--border);
+  }
+
   .hero-stat {
-    flex: 1 1 40%;
+    flex: 0 0 auto;
+    min-width: 75px;
   }
 
   .stat-number {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
   }
 
   .hero-actions {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
     width: 100%;
-    max-width: 280px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 3rem;
+    padding: 0;
+  }
+
+  .hero-actions .btn {
+    flex: 1;
+    padding: 0.7rem 0.2rem;
+    font-size: 0.8rem;
+    /* Smaller font on mobile buttons to prevent overflow */
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 8px 3px 8px 3px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-actions .btn-primary .btn-arrow {
+    display: none;
   }
 
   .scroll-indicator {

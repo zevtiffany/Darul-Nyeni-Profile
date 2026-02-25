@@ -21,7 +21,10 @@ body {
   background: var(--bg-deep);
   color: var(--text-main);
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  /* Force prevent horizontal scroll globally */
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -68,6 +71,8 @@ section {
   padding: var(--section-pad) 0;
   position: relative;
   z-index: 2;
+  overflow: hidden;
+  /* Added to catch any wayward overflow */
 }
 
 /* === TYPOGRAPHY === */
