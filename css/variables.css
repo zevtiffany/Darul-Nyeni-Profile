@@ -1,28 +1,57 @@
-/* CSS Variables for Core Theme */
+/* =============================================
+   DARUL NYENI — Theme: "Pesantren Cerah Ceria"
+   Light & warm — kayak halaman pondok pas pagi hari ☀️
+   ============================================= */
 :root {
-  --bg-dark: #F5F7F5;
-  /* Light greyish white */
-  --bg-surface: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.9);
+  /* Background palette — cerah kayak hati santri habis tahajjud */
+  --bg-deep: #f8f6f1;
+  --bg-dark: #f0ece4;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f2ec;
 
-  --primary: #128256;
-  /* Islamic green */
-  --primary-glow: rgba(18, 130, 86, 0.4);
-  --secondary: #EAB308;
-  /* Warm gold */
-  --secondary-glow: rgba(234, 179, 8, 0.4);
+  /* Primary — emerald green (segar, islami, tegas) */
+  --primary: #0d9e5c;
+  --primary-dim: #0b7d4a;
+  --primary-glow: rgba(13, 158, 92, 0.2);
+  --primary-subtle: rgba(13, 158, 92, 0.06);
 
-  --text-main: #1F2937;
-  /* Dark slate for contrast */
-  --text-muted: #4B5563;
-  /* Medium grey */
+  /* Gold — warm gold (kitab kuning vibes) */
+  --gold: #c78c20;
+  --gold-dim: #9e6f1a;
+  --gold-glow: rgba(199, 140, 32, 0.15);
+  --gold-subtle: rgba(199, 140, 32, 0.06);
 
-  --glass-border: rgba(18, 130, 86, 0.15);
-  --glass-bg: rgba(255, 255, 255, 0.6);
+  /* Role accent colors for roster cards — slightly deeper for light bg */
+  --role-roam: #0288d1;
+  --role-mid: #7c4dff;
+  --role-exp: #e64a19;
+  --role-gold: #f9a825;
+  --role-jungle: #2e7d32;
+  --role-sup: #00838f;
 
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  /* Typography colors — dark ink on light paper */
+  --text-main: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --text-dim: #b5b5b5;
 
-  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Borders */
+  --border: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(13, 158, 92, 0.3);
+  --border-gold: rgba(199, 140, 32, 0.15);
+
+  /* Fonts */
+  --font-heading: 'Calistoga', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* Easing */
+  --ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+  /* Layout */
+  --section-pad: 7rem;
+  --container-width: 1200px;
 }
-
