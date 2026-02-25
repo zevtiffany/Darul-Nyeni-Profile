@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pondok Pesantren Darul Nyeni</title>
+    <title>Darul Nyeni — Pondok Pesantren Paling Santuy di Malang</title>
     <meta name="description"
-        content="Web profile of Pondok Pesantren Darul Nyeni, Malang. Mabar Jalan, Ngaji Kewajiban.">
+        content="Pondok Pesantren Darul Nyeni, Malang. Mabar Jalan, Ngaji Kewajiban, IPK Nyusul Kemudian.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Calistoga&family=Outfit:wght@300;400;500;700;900&family=Caveat:wght@500;700&display=swap"
         rel="stylesheet">
-    <!-- External CSS (Modularized) -->
+    <!-- CSS -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -22,353 +22,600 @@
 </head>
 
 <body>
+    <!-- Noise grain overlay -->
+    <div class="noise-overlay"></div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-content">
-            <h1 class="logo">Darul<span>Nyeni</span></h1>
+            <a href="#hero" class="logo">
+                <span class="logo-icon"></span>
+                Darul<span class="logo-accent">Nyeni</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#hero">Beranda</a></li>
-                <li><a href="#about">Sejarah</a></li>
-                <li><a href="#roster">Kafilah (Roster)</a></li>
-                <li><a href="#contact">Lokasi</a></li>
+                <li><a href="#hero" class="nav-link active">Beranda</a></li>
+                <li><a href="#about" class="nav-link">Kisah</a></li>
+                <li><a href="#jadwal" class="nav-link">Jadwal</a></li>
+                <li><a href="#roster" class="nav-link">Roster</a></li>
+                <li><a href="#contact" class="nav-link">Markas</a></li>
             </ul>
-            <button class="menu-btn" aria-label="Menu" id="mobile-menu-btn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
+            <button class="menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
             </button>
         </div>
+        <div class="mobile-overlay" id="mobile-overlay"></div>
         <div class="mobile-menu" id="mobile-menu">
             <a href="#hero" class="mobile-link">Beranda</a>
-            <a href="#about" class="mobile-link">Sejarah</a>
-            <a href="#roster" class="mobile-link">Kafilah (Roster)</a>
-            <a href="#contact" class="mobile-link">Lokasi</a>
+            <a href="#about" class="mobile-link">Kisah</a>
+            <a href="#jadwal" class="mobile-link">Jadwal</a>
+            <a href="#roster" class="mobile-link">Roster</a>
+            <a href="#contact" class="mobile-link">Markas</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Marquee Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span class="ticker-item">"Kalau lose streak, istighfar dulu baru next game" — Azmi</span>
+            <span class="ticker-item">"Kopi habis, WiFi lemot, tapi semangat ngaji tetap menyala" — Rizal</span>
+            <span class="ticker-item">"Revisi bab 4 itu ujian kesabaran yang sesungguhnya" — Agil</span>
+            <span class="ticker-item">"Lord lebih penting dari makan siang" — Farda</span>
+            <span class="ticker-item">"Push rank itu sunnah, push skripsi itu wajib" — Zidan</span>
+            <span class="ticker-item">"Doa sebelum ranked = win streak insyaallah" — Dzakki</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item">"Kalau lose streak, istighfar dulu baru next game" — Azmi</span>
+            <span class="ticker-item">"Kopi habis, WiFi lemot, tapi semangat ngaji tetap menyala" — Rizal</span>
+            <span class="ticker-item">"Revisi bab 4 itu ujian kesabaran yang sesungguhnya" — Agil</span>
+            <span class="ticker-item">"Lord lebih penting dari makan siang" — Farda</span>
+            <span class="ticker-item">"Push rank itu sunnah, push skripsi itu wajib" — Zidan</span>
+            <span class="ticker-item">"Doa sebelum ranked = win streak insyaallah" — Dzakki</span>
+        </div>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
     <section id="hero" class="hero">
-        <div class="hero-bg"></div>
         <div class="container hero-content">
-            <div class="hero-badge">Ahlan Wa Sahlan</div>
-            <h1 class="hero-title">Pondok Pesantren<br><span class="highlight">Darul Nyeni</span></h1>
-            <p class="hero-subtitle">Mabar Jalan, Ngaji Kewajiban, IPK Nyusul Kemudian.</p>
-            <div class="hero-actions">
-                <a href="#roster" class="btn btn-primary">Lihat Roster Santri</a>
-                <a href="#about" class="btn btn-secondary">Kisah Kami</a>
+            <div class="hero-badge reveal-up">
+                <span>بسم الله الرحمن الرحيم</span>
+            </div>
+            <h1 class="hero-title reveal-up">
+                Pondok Pesantren<br>
+                <span class="hero-highlight">Darul Nyeni</span>
+            </h1>
+            <p class="hero-tagline reveal-up">
+                <span id="hero-typewriter"></span><span class="typewriter-cursor">|</span>
+            </p>
+
+            <div class="hero-stats reveal-up">
+                <div class="hero-stat">
+                    <div style="display: flex; align-items: baseline; justify-content: center; gap: 5px;">
+                        <span class="stat-number" data-count="6" style="display: inline-block;">0</span>
+                        <span
+                            style="color: var(--gold); font-family: var(--font-heading); font-weight: 900; font-size: 1.2rem;">+2</span>
+                    </div>
+                    <span class="stat-label">Santri Aktif</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Waktu Sholat</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number" data-count="999">0</span>
+                    <span class="stat-label">Ayam Terbantai</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Kopi Diminum</span>
+                </div>
+            </div>
+
+            <div class="hero-actions reveal-up">
+                <a href="#roster" class="btn btn-primary">
+                    <span>Lihat Roster Santri</span>
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#about" class="btn btn-ghost">Baca Kisah Kami</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ========== ABOUT / SEJARAH ========== -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2 class="section-title">Asal Muasal <span>Darul Nyeni</span></h2>
-                    <p class="lead">Berawal dari keresahan 6 pemuda (yang lebih sering nge-rank dari pada ngaji) akan
-                        kerasnya dunia per-Land-of-Dawn-an dan fana-nya IPK kampus.</p>
-                    <p>Mereka sadar bahwa jasmani yang sehat dan mekanik yang jago tidaklah cukup tanpa rohani yang
-                        kuat. Seringkali lose streak membuat hati gelap dan lisan tak terjaga. Maka dari itu, berdirilah
-                        <strong>Pondok Pesantren Darul Nyeni</strong>.
-                    </p>
-                    <div class="quote-box">
-                        "Tempat di mana doa dipanjatkan, skripsi dikerjakan dengan linangan air mata, dan win streak
-                        diusahakan dengan penuh tawakkal."
-                    </div>
-                    <p>Kami hadir untuk menyeimbangkan duniawi (tugas kampus & push rank) dan ukhrawi (ngaji & ibadah)
-                        di satu tempat yang penuh pesona: <em>Kota Malang</em>.</p>
+            <div class="section-label reveal-up">Sejarah Singkat</div>
+            <h2 class="section-title reveal-up">
+                Asal Muasal<br><span class="text-primary">Darul Nyeni</span>
+            </h2>
 
-                    <div class="dalil-box glow-effect mt-4">
-                        <div class="arabic-text">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
-                        <p class="translation">"Menuntut ilmu itu wajib atas setiap muslim."<br><strong>(HR. Ibnu
-                                Majah)</strong></p>
-                    </div>
+            <!-- Bento Grid Section -->
+            <div class="bento-grid">
+                <!-- Step 1 (Large) -->
+                <div class="bento-item step-1 large reveal-up">
+                    <div class="bento-badge">01</div>
+                    <div class="bento-icon"></div>
+                    <h3>Keresahan 6 Pemuda</h3>
+                    <p>Berawal dari keresahan 6 pemuda yang lebih sering nge-rank daripada ngaji. Mereka sadar bahwa
+                        jasmani yang sehat tidaklah cukup tanpa rohani yang kuat.</p>
+                    <div class="handwritten">"Kok lose streak terus ya... mungkin kurang istighfar"</div>
                 </div>
-                <div class="about-image-wrapper">
-                    <div class="about-card glow-effect">
-                        <div class="about-card-inner">
-                            <h3>Visi</h3>
-                            <p>Mencetak generasi santri yang berakhlak mulia, ber-KDA tinggi, dan lulus tepat... pada
-                                waktunya.</p>
-                        </div>
-                    </div>
-                    <div class="about-card glow-effect mt-4">
-                        <div class="about-card-inner">
-                            <h3>Misi</h3>
-                            <ul>
-                                <li>Sholat jamaah 5 waktu tiada henti.</li>
-                                <li>Mengamankan Lord saat turtle pertama.</li>
-                                <li>Revisi bab 4 sampai ACC dosen.</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div class="amalan-card glow-effect mt-4">
-                        <h3>Amalan & Wirid Harian</h3>
-                        <div class="amalan-list">
-                            <a href="https://quran.com/36" target="_blank" rel="noopener noreferrer"
-                                class="amalan-item">
-                                <span class="surah-name">📖 Surat Yasin</span>
-                                <span class="surah-time">Ba'da Subuh / Maghrib</span>
-                            </a>
-                            <a href="https://quran.com/55" target="_blank" rel="noopener noreferrer"
-                                class="amalan-item">
-                                <span class="surah-name">📖 Surat Ar-Rahman</span>
-                                <span class="surah-time">Ba'da Dhuha</span>
-                            </a>
-                            <a href="https://quran.com/56" target="_blank" rel="noopener noreferrer"
-                                class="amalan-item">
-                                <span class="surah-name">📖 Surat Al-Waqi'ah</span>
-                                <span class="surah-time">Ba'da Ashar</span>
-                            </a>
-                            <a href="https://quran.com/67" target="_blank" rel="noopener noreferrer"
-                                class="amalan-item">
-                                <span class="surah-name">📖 Surat Al-Mulk</span>
-                                <span class="surah-time">Sebelum Tidur</span>
-                            </a>
+                <!-- Visi (Small) -->
+                <div class="bento-item visi reveal-up" style="transition-delay: 0.1s">
+                    <h3>Visi</h3>
+                    <p>Mencetak generasi santri yang berakhlak mulia, ber-KDA tinggi, dan lulus tepat... pada waktunya.
+                    </p>
+                </div>
+
+                <!-- Misi (Medium/Small) -->
+                <div class="bento-item misi reveal-up" style="transition-delay: 0.2s">
+                    <h3>Misi</h3>
+                    <ul>
+                        <li>Sholat jamaah 5 waktu</li>
+                        <li>Amankan Lord & Turtle</li>
+                        <li>Revisi ACC Dosen</li>
+                        <li>Khatam Al-Qur'an</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 (Medium) -->
+                <div class="bento-item step-2 large reveal-up" style="transition-delay: 0.3s">
+                    <div class="bento-badge">02</div>
+                    <div class="bento-icon"></div>
+                    <h3>Pencerahan Malam</h3>
+                    <p>Di satu malam penuh kekalahan, tercetus ide gila: mendirikan majelis yang menyeimbangkan duniawi
+                        dan ukhrawi. No toxic, just doa.</p>
+                    <div class="handwritten">"Gimana kalau kita bikin pondok sendiri?"</div>
+                </div>
+
+                <!-- Step 3 (Large) -->
+                <div class="bento-item step-3 large reveal-up" style="transition-delay: 0.4s">
+                    <div class="bento-badge">03</div>
+                    <div class="bento-icon"></div>
+                    <h3>Darul Nyeni Berdiri</h3>
+                    <p>Maka berdirilah tempat di mana doa dipanjatkan, skripsi dikerjakan dengan air mata, dan win
+                        streak diusahakan dengan penuh tawakkal.</p>
+                    <div class="handwritten">"Bismillah, mari kita seimbangkan hidup"</div>
+                </div>
+
+                <!-- Dalil (Small/Medium) -->
+                <div class="bento-item dalil reveal-up" style="transition-delay: 0.5s">
+                    <div class="dalil-arabic">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</div>
+                    <p class="dalil-translation">"Menuntut ilmu itu wajib atas setiap muslim."</p>
+                    <span class="dalil-source">HR. Ibnu Majah</span>
+                </div>
+            </div>
+
+            <!-- Amalan Harian -->
+            <div class="amalan-section reveal-up">
+                <h3 class="amalan-title">Amalan & Wirid Harian</h3>
+                <div class="amalan-grid">
+                    <a href="https://quran.com/36" target="_blank" rel="noopener noreferrer" class="amalan-card">
+                        <div class="amalan-icon"></div>
+                        <div class="amalan-info">
+                            <span class="amalan-name">Surat Yasin</span>
+                            <span class="amalan-time">Ba'da Subuh / Maghrib</span>
                         </div>
-                    </div>
+                        <span class="amalan-arrow">↗</span>
+                    </a>
+                    <a href="https://quran.com/55" target="_blank" rel="noopener noreferrer" class="amalan-card">
+                        <div class="amalan-icon"></div>
+                        <div class="amalan-info">
+                            <span class="amalan-name">Surat Ar-Rahman</span>
+                            <span class="amalan-time">Ba'da Dhuha</span>
+                        </div>
+                        <span class="amalan-arrow">↗</span>
+                    </a>
+                    <a href="https://quran.com/56" target="_blank" rel="noopener noreferrer" class="amalan-card">
+                        <div class="amalan-icon"></div>
+                        <div class="amalan-info">
+                            <span class="amalan-name">Surat Al-Waqi'ah</span>
+                            <span class="amalan-time">Ba'da Ashar</span>
+                        </div>
+                        <span class="amalan-arrow">↗</span>
+                    </a>
+                    <a href="https://quran.com/67" target="_blank" rel="noopener noreferrer" class="amalan-card">
+                        <div class="amalan-icon"></div>
+                        <div class="amalan-info">
+                            <span class="amalan-name">Surat Al-Mulk</span>
+                            <span class="amalan-time">Sebelum Tidur</span>
+                        </div>
+                        <span class="amalan-arrow">↗</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Roster Section -->
-    <section id="roster" class="roster">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title text-center">Kafilah <span>(Roster)</span> Utama</h2>
-                <p class="section-desc text-center">Para santri elit yang siap membela Ponpes di medan akademik maupun
-                    Land of Dawn.</p>
-            </div>
+    <!-- ========== JADWAL HARIAN (GANTT CHART) ========== -->
+    <section id="jadwal" class="jadwal">
+        <div class="container text-center">
+            <div class="section-label reveal-up">High Performance Schedule</div>
+            <h2 class="section-title reveal-up">
+                Daily Routine<br><span class="text-gold">Gantt Chart Analysis</span>
+            </h2>
+            <p class="section-desc reveal-up">Optimasi waktu antara akhirat, akademik, dan push rank demi masa depan
+                yang cerah.</p>
+        </div>
 
+        <div class="container reveal-up">
+            <div class="gantt-wrapper">
+                <div class="gantt-chart">
+                    <!-- Time Labels (04:00 - 23:00) -->
+                    <div class="gantt-header">
+                        <div class="time-slot">04:00</div>
+                        <div class="time-slot">05:00</div>
+                        <div class="time-slot">06:00</div>
+                        <div class="time-slot">07:00</div>
+                        <div class="time-slot">08:00</div>
+                        <div class="time-slot">09:00</div>
+                        <div class="time-slot">10:00</div>
+                        <div class="time-slot">11:00</div>
+                        <div class="time-slot">12:00</div>
+                        <div class="time-slot">13:00</div>
+                        <div class="time-slot">14:00</div>
+                        <div class="time-slot">15:00</div>
+                        <div class="time-slot">16:00</div>
+                        <div class="time-slot">17:00</div>
+                        <div class="time-slot">18:00</div>
+                        <div class="time-slot">19:00</div>
+                        <div class="time-slot">20:00</div>
+                        <div class="time-slot">21:00</div>
+                        <div class="time-slot">22:00</div>
+                        <div class="time-slot">23:00</div>
+                    </div>
+
+                    <!-- Row 1: Spiritualitas -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Spiritualitas</div>
+                        <div class="gantt-bar-container">
+                            <div class="gantt-grid-lines">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <!-- Tiap 4 columns = 1 jam. Tiap 1 column = 15 menit -->
+                            <!-- Start 04:00 (col 1) -->
+                            <div class="gantt-bar" style="grid-column: 3 / 9" title="Tahajud & Subuh (04:30 - 06:00)">
+                                <span class="bar-title">Tahajud & Subuh</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 9 / 17" title="Ngaji Pagi (06:00 - 08:00)">
+                                <span class="bar-title">Ngaji Pagi & Tadarus</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 47 / 51" title="Ashar (15:30 - 16:30)">
+                                <span class="bar-title">Ashar</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 57 / 63" title="Maghrib & Yasin (18:00 - 19:30)">
+                                <span class="bar-title">Maghrib & Jamaah</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 63 / 69" title="Isya & Kajian (19:30 - 21:00)">
+                                <span class="bar-title">Isya & Kajian Kitab</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Akademik -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Akademik</div>
+                        <div class="gantt-bar-container">
+                            <div class="gantt-grid-lines">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="gantt-bar gold" style="grid-column: 17 / 33"
+                                title="Kuliah / Tugas Kampus (08:00 - 12:00)">
+                                <span class="bar-title">Kuliah & Deadline Season</span>
+                            </div>
+                            <div class="gantt-bar gold" style="grid-column: 69 / 77"
+                                title="Skripsi / Belajar (21:00 - 23:00)">
+                                <span class="bar-title">Night Shift Skripsi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Life Balance -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Life Balance</div>
+                        <div class="gantt-bar-container">
+                            <div class="gantt-grid-lines">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 33 / 41" title="Makan & Dzuhur (12:00 - 14:00)">
+                                <span class="bar-title">Lunch Break & Dzuhur</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 41 / 47" title="Ngopi & Diskusi (14:00 - 15:30)">
+                                <span class="bar-title">Coffee & Meta Debates</span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 51 / 57" title="RANKED MATCH (16:30 - 18:00)">
+                                <span class="bar-title">MABAR SESSION</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Recovery -->
+                    <div class="gantt-row">
+                        <div class="gantt-label">Recovery</div>
+                        <div class="gantt-bar-container">
+                            <div class="gantt-grid-lines">
+                                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="gantt-bar" style="grid-column: 77 / 81" title="Tidur (23:00++)">
+                                <span class="bar-title">Sleep (Insyaallah)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="handwritten text-center" style="margin-top: 1.5rem">
+                    *Gantt chart ini hanyalah estimasi, kenyataannya seringkali "satu game lagi" merusak segalanya.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ROSTER SECTION ========== -->
+    <section id="roster" class="roster">
+        <div class="container text-center">
+            <div class="section-label reveal-up">Tim Inti</div>
+            <h2 class="section-title reveal-up">
+                Kafilah<br><span class="text-primary">(Roster) Utama</span>
+            </h2>
+            <p class="section-desc reveal-up">Para santri elit yang siap membela Ponpes di medan akademik maupun Land
+                of Dawn. Klik kartu untuk lihat profil!</p>
+        </div>
+
+        <div class="container">
             <div class="roster-grid">
-                <!-- Santri 1 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 1 — Azmi -->
+                <div class="roster-card reveal-up" data-role="roam" onclick="this.classList.toggle('flipped')">
                     <div class="card-inner">
-                        <!-- Front Face -->
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Roam</div>
                                 <div class="santri-name">Azmi Widhi Zevtiffany</div>
-                                <div class="santri-edu">S1 Ekonomi Pembangunan, Universitas Brawijaya</div>
+                                <div class="santri-title">Shotcaller yg mati duluan</div>
+                                <div class="santri-edu">S1 Ekonomi Pembangunan<br>Universitas Brawijaya</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Macro</span>
+                                    <div class="stat">
+                                        <span class="label">Macro <span>90%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 90%;"></div>
+                                            <div class="fill" data-width="90%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Micro</span>
+                                    <div class="stat">
+                                        <span class="label">Micro <span>75%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 75%;"></div>
+                                            <div class="fill" data-width="75%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Back Face (Photo Placeholder) -->
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Azmi Widhi Zevtiffany</div>
+                                <div class="back-quote">"Gue rotate dulu guys... *dies*"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Santri 2 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 2 — Rizal -->
+                <div class="roster-card reveal-up" data-role="mid" onclick="this.classList.toggle('flipped')"
+                    style="transition-delay:0.1s">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Mid Lane</div>
                                 <div class="santri-name">Rizal Abrar Fahmi</div>
-                                <div class="santri-edu">D4 Teknik Informatika, Politeknik Negeri Malang</div>
+                                <div class="santri-title">Ngoding sambil push rank</div>
+                                <div class="santri-edu">D4 Teknik Informatika<br>Politeknik Negeri Malang</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Agility</span>
+                                    <div class="stat">
+                                        <span class="label">Agility <span>85%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 85%;"></div>
+                                            <div class="fill" data-width="85%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Coding</span>
+                                    <div class="stat">
+                                        <span class="label">Coding <span>95%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 95%;"></div>
+                                            <div class="fill" data-width="95%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Rizal Abrar Fahmi</div>
+                                <div class="back-quote">"Bug di code sama bug di game, dua-duanya bikin pusing"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Santri 3 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 3 — Agil -->
+                <div class="roster-card reveal-up" data-role="exp" onclick="this.classList.toggle('flipped')"
+                    style="transition-delay:0.2s">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Exp Lane</div>
                                 <div class="santri-name">Agil Putra Madani</div>
-                                <div class="santri-edu">D4 Administrasi Niaga, Politeknik Negeri Malang</div>
+                                <div class="santri-title">Kuat nahan lane & nahan lapar</div>
+                                <div class="santri-edu">D4 Administrasi Niaga<br>Politeknik Negeri Malang</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Durability</span>
+                                    <div class="stat">
+                                        <span class="label">Durability <span>90%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 90%;"></div>
+                                            <div class="fill" data-width="90%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Business</span>
+                                    <div class="stat">
+                                        <span class="label">Business <span>80%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 80%;"></div>
+                                            <div class="fill" data-width="80%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Agil Putra Madani</div>
+                                <div class="back-quote">"Yang penting cut wave dulu, makan ntar aja"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Santri 4 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 4 — Farda -->
+                <div class="roster-card reveal-up" data-role="gold" onclick="this.classList.toggle('flipped')"
+                    style="transition-delay:0.1s">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Gold Lane</div>
                                 <div class="santri-name">Farda Izzatul Ainur Irvanaya</div>
-                                <div class="santri-edu">D4 Teknik Elektro, Politeknik Negeri Malang</div>
+                                <div class="santri-title">Farming > farming skripsi</div>
+                                <div class="santri-edu">D4 Teknik Elektro<br>Politeknik Negeri Malang</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Farming</span>
+                                    <div class="stat">
+                                        <span class="label">Farming <span>95%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 95%;"></div>
+                                            <div class="fill" data-width="95%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Positioning</span>
+                                    <div class="stat">
+                                        <span class="label">Positioning <span>88%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 88%;"></div>
+                                            <div class="fill" data-width="88%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Farda Izzatul A.I.</div>
+                                <div class="back-quote">"Gold lane full item, skripsi masih bab 1"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Santri 5 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 5 — Zidan -->
+                <div class="roster-card reveal-up" data-role="jungle" onclick="this.classList.toggle('flipped')"
+                    style="transition-delay:0.2s">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Jungler</div>
                                 <div class="santri-name">Zidan Ramadhan Yulian Pradan</div>
-                                <div class="santri-edu">S1 Manajemen, Universitas Islam Negeri Maulana Malik Ibrahim
-                                    Malang
-                                </div>
+                                <div class="santri-title">Retribution > retribusi pajak</div>
+                                <div class="santri-edu">S1 Manajemen<br>UIN Maulana Malik Ibrahim Malang</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Retribution</span>
+                                    <div class="stat">
+                                        <span class="label">Retribution <span>98%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 98%;"></div>
+                                            <div class="fill" data-width="98%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Rotation</span>
+                                    <div class="stat">
+                                        <span class="label">Rotation <span>92%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 92%;"></div>
+                                            <div class="fill" data-width="92%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Zidan Ramadhan Y.P.</div>
+                                <div class="back-quote">"Lord secured, IPK insyaallah secured juga"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Santri 6 -->
-                <div class="roster-card" onclick="this.classList.toggle('flipped')">
+                <!-- Santri 6 — Dzakki -->
+                <div class="roster-card reveal-up" data-role="sup" onclick="this.classList.toggle('flipped')"
+                    style="transition-delay:0.3s">
                     <div class="card-inner">
                         <div class="card-front">
                             <div class="card-glow"></div>
                             <div class="card-content">
                                 <div class="role-badge">Roam / Sup</div>
                                 <div class="santri-name">Dzakki Abyan Priyasetyaka</div>
-                                <div class="santri-edu">S1 Perpajakan, Universitas Brawijaya</div>
+                                <div class="santri-title">Backup teman, lupa backup tugas</div>
+                                <div class="santri-edu">S1 Perpajakan<br>Universitas Brawijaya</div>
                                 <div class="stats">
-                                    <div class="stat"><span class="label">Vision</span>
+                                    <div class="stat">
+                                        <span class="label">Vision <span>85%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 85%;"></div>
+                                            <div class="fill" data-width="85%"></div>
                                         </div>
                                     </div>
-                                    <div class="stat"><span class="label">Tax Logic</span>
+                                    <div class="stat">
+                                        <span class="label">Tax Logic <span>90%</span></span>
                                         <div class="bar">
-                                            <div class="fill" style="width: 90%;"></div>
+                                            <div class="fill" data-width="90%"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-back">
-                            <div class="photo-placeholder">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                    <polyline points="21 15 16 10 5 21"></polyline>
-                                </svg>
-                                <span>Foto Profil Belum Tersedia</span>
+                            <div class="card-back-content">
+                                <div class="photo-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="back-name">Dzakki Abyan P.</div>
+                                <div class="back-quote">"Gue vision dulu... *dies juga*"</div>
+                                <div class="back-flip-hint">Klik lagi untuk kembali</div>
                             </div>
                         </div>
                     </div>
@@ -377,45 +624,48 @@
         </div>
     </section>
 
-    <!-- Contact & Location Section -->
+    <!-- ========== CONTACT / LOKASI ========== -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-box glow-effect">
+            <div class="contact-box reveal-up">
                 <div class="contact-content">
-                    <h2 class="section-title">Markas <span>Besar</span></h2>
+                    <div class="section-label">Lokasi</div>
+                    <h2 class="section-title">Markas <span class="text-primary">Besar</span></h2>
                     <p class="address">
-                        <strong>Jl. Griya Tunggul Asri, No. 12</strong><br>
+                        <strong>Jl. Griya Tunggul Asri, No. 12</strong>
                         Tunggulwulung, Kecamatan Lowokwaru<br>
                         Kota Malang, Jawa Timur
                     </p>
-                    <p class="contact-note">Sedia kopi, WiFi, dan colokan. Dilarang toxic saat mabar di kawasan majelis.
-                    </p>
+                    <p class="contact-note">Sedia kopi, WiFi, dan colokan. Dilarang toxic saat mabar di kawasan
+                        majelis.</p>
                 </div>
                 <div class="map-placeholder">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.527318357039!2d112.6079979!3d-7.944320499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7882772591ddbf%3A0xc023fedaf58c14d9!2sJl.%20Griya%20Tunggul%20Asri%20No.12%2C%20Tunggulwulung%2C%20Kec.%20Lowokwaru%2C%20Kota%20Malang%2C%20Jawa%20Timur%2065143!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-                        width="100%" height="100%" style="border:0; border-radius: 16px;" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========== FOOTER ========== -->
     <footer>
         <div class="container footer-content">
             <div class="footer-brand">
                 <h2>Darul<span>Nyeni</span></h2>
-                <p>Est. 2026</p>
+                <div class="footer-status">
+                    <span class="status-dot"></span>
+                    <span>Status Pondok: Online</span>
+                </div>
             </div>
-            <div class="footer-links">
+            <div class="footer-right">
                 <p>&copy; 2026 Pondok Pesantren Darul Nyeni. All Rights Reserved.</p>
-                <p>Dibuat dengan keringat santri dan ampas kopi.</p>
+                <p>Dibuat dengan keringat santri dan ampas kopi</p>
             </div>
         </div>
     </footer>
 
-    <!-- External JS (Modularized) -->
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 </body>
