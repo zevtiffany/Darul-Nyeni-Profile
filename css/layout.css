@@ -197,9 +197,15 @@
 
 .ticker {
   display: flex;
+  width: max-content;
+  /* Memastikan lebar dihitung dari seluruh konten bukan container */
   white-space: nowrap;
   animation: marquee 45s linear infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  /* Force GPU acceleration */
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .ticker:hover {

@@ -78,6 +78,11 @@
     top: 72px;
   }
 
+  .ticker {
+    animation-duration: 30s;
+    /* Diatur ulang agar tidak terlalu cepat (penyebab stutter/flicker) */
+  }
+
   .ticker-item {
     font-size: 0.75rem;
     padding: 0 1.5rem;
