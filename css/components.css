@@ -20,8 +20,16 @@
   transform-style: preserve-3d;
 }
 
+.roster-card:hover .card-inner {
+  transform: translateY(-5px);
+}
+
 .roster-card.flipped .card-inner {
   transform: rotateY(180deg);
+}
+
+.roster-card.flipped:hover .card-inner {
+  transform: rotateY(180deg) translateY(-5px);
 }
 
 .card-front,
@@ -45,6 +53,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  transform: rotateY(0deg);
 }
 
 /* Top accent line per role */
@@ -69,7 +78,13 @@
   box-shadow:
     0 8px 30px rgba(0, 0, 0, 0.08),
     0 0 15px color-mix(in srgb, var(--card-accent, var(--primary)) 10%, transparent);
-  transform: translateY(-5px);
+}
+
+.roster-card:hover .card-back {
+  border-color: var(--card-accent, var(--border-hover));
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08),
+    0 0 15px color-mix(in srgb, var(--card-accent, var(--primary)) 10%, transparent);
 }
 
 /* Card glow overlay */
@@ -189,6 +204,7 @@
   justify-content: center;
   background: var(--bg-surface);
   border: 1px solid var(--border);
+  transition: all 0.4s var(--ease);
   padding: 2rem;
   text-align: center;
 }
