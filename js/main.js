@@ -208,4 +208,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ===========================
+    // 8. FUZZY TEXT EFFECT (Mystery Card)
+    // ===========================
+    class FuzzyText {
+        constructor(element, options = {}) {
+            this.el = element;
+            this.text = element.innerText;
+            this.canvas = document.createElement('canvas');
+            this.ctx = this.canvas.getContext('2d');
+            this.options = {
+                fuzzRange: options.fuzzRange || 40,
+                fps: options.fps || 60,
+                ...options
+            };
+            this.init();
+        }
+
+        async init() {
+            const style = window.getComputedStyle(this.el);
+            const fontSize = style.fontSize;
+            const fontWeight = style.fontWeight;
+            const fontFamily = style.fontFamily;
+            const color = style.color;
+
+            // Wait for fonts to be ready
+            await document.fonts.ready;
+
+            this.offscreen = document.createElement('canvas');
+            this.offCtx = this.offscreen.getContext('2d');
+            const fontString = `${fontWeight} ${fontSize} ${fontFamily}`;
+            this.offCtx.font = fontString;
+
+            const metrics = this.offCtx.measureText(this.text);
+            const width = Math.ceil(metrics.width);
+            const height = parseInt(fontSize) * 1.5;
+
+            this.offscreen.width = width;
+            this.offscreen.height = height;
+            this.offCtx.font = fontString;
+            this.offCtx.fillStyle = color;
+            this.offCtx.textBaseline = 'middle';
+            this.offCtx.fillText(this.text, 0, height / 2);
+
+            this.canvas.width = width + this.options.fuzzRange;
+            this.canvas.height = height;
+
+            this.el.innerHTML = '';
+            this.el.appendChild(this.canvas);
+            this.animate();
+        }
+
+        animate() {
+            const run = () => {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                for (let j = 0; j < this.offscreen.height; j++) {
+                    const dx = (Math.random() - 0.5) * this.options.fuzzRange;
+                    this.ctx.drawImage(this.offscreen, 0, j, this.offscreen.width, 1, dx + this.options.fuzzRange / 2, j, this.offscreen.width, 1);
+                }
+                this.timer = setTimeout(() => requestAnimationFrame(run), 1000 / this.options.fps);
+            };
+            requestAnimationFrame(run);
+        }
+    }
+
+    const mysteryElements = document.querySelectorAll('.card-mysterious .santri-name, .card-mysterious .santri-title, .card-mysterious .santri-edu, .card-mysterious .stat .label, .card-mysterious .back-name, .card-mysterious .back-quote');
+    mysteryElements.forEach(el => {
+        new FuzzyText(el, { fuzzRange: 60 });
+    });
+
 });

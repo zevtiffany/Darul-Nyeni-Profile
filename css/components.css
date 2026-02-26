@@ -114,6 +114,14 @@
   height: 100%;
 }
 
+/* Role badge wrapper */
+.badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
 /* Role badge */
 .role-badge {
   display: inline-flex;
@@ -129,7 +137,23 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 1.2rem;
+}
+
+/* Status badge (Cadangan/Backup) */
+.status-badge {
+  display: inline-flex;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+.status-cadangan {
+  background: rgba(158, 158, 158, 0.1);
+  color: #888;
+  border: 1px solid rgba(158, 158, 158, 0.2);
 }
 
 .santri-name {
@@ -278,6 +302,56 @@
 
 .roster-card[data-role="sup"] {
   --card-accent: var(--role-sup);
+}
+
+.roster-card[data-role="mystery"] {
+  --card-accent: var(--role-mystery);
+}
+
+/* === MYSTERIOUS CARD SPECIAL EFFECTS === */
+.card-mysterious .santri-name,
+.card-mysterious .santri-title,
+.card-mysterious .santri-edu,
+.card-mysterious .stat,
+/* Individual stats */
+.card-mysterious .back-name {
+  user-select: none;
+  color: var(--role-mystery);
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.card-mysterious .back-quote {
+  color: var(--role-mystery);
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Noisy scanline for the mystery card */
+.card-mysterious .card-front::after,
+.card-mysterious .card-back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    repeating-linear-gradient(0deg,
+      rgba(255, 255, 255, 0.15) 0px,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px,
+      transparent 3px),
+    repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.1) 0px,
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 4px);
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.8;
+  mix-blend-mode: overlay;
 }
 
 /* === FUN COUNTER BADGE (in hero) === */
