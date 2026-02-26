@@ -395,9 +395,36 @@
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(auto, auto);
+  grid-template-areas:
+    "step1 step1 visi"
+    "step2 step2 misi"
+    "step3 step3 dalil";
   gap: 1.5rem;
   margin: 4rem auto;
+}
+
+.bento-item.step-1 {
+  grid-area: step1;
+}
+
+.bento-item.step-2 {
+  grid-area: step2;
+}
+
+.bento-item.step-3 {
+  grid-area: step3;
+}
+
+.bento-item.visi {
+  grid-area: visi;
+}
+
+.bento-item.misi {
+  grid-area: misi;
+}
+
+.bento-item.dalil {
+  grid-area: dalil;
 }
 
 .bento-item {
@@ -418,16 +445,10 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
 }
 
-.bento-item.large {
-  grid-column: span 2;
-}
-
-.bento-item.medium {
-  grid-column: span 1;
-}
-
+.bento-item.large,
+.bento-item.medium,
 .bento-item.small {
-  grid-column: span 1;
+  /* Spans are now handled by grid-template-areas for better control */
 }
 
 .bento-badge {
@@ -512,26 +533,25 @@
 @media (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .bento-item.large,
-  .bento-item.medium,
-  .bento-item.small {
-    grid-column: span 1;
-  }
-
-  .bento-item.step-1 {
-    grid-column: span 2;
+    grid-template-areas:
+      "step1 step1"
+      "step2 step2"
+      "step3 step3"
+      "visi misi"
+      "dalil dalil";
   }
 }
 
 @media (max-width: 768px) {
   .bento-grid {
     grid-template-columns: 1fr;
-  }
-
-  .bento-item.step-1 {
-    grid-column: span 1;
+    grid-template-areas:
+      "step1"
+      "step2"
+      "step3"
+      "visi"
+      "misi"
+      "dalil";
   }
 }
 
